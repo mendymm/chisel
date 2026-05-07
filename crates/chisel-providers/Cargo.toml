@@ -1,16 +1,17 @@
 [package]
-name = "chisel-bin"
+name = "chisel-providers"
 version.workspace = true
 edition.workspace = true
 license.workspace = true
 
 [dependencies]
 chisel-core = { path = "../chisel-core" }
-chisel-providers = { path = "../chisel-providers" }
-chisel-tui = { path = "../chisel-tui" }
-tokio = { workspace = true }
+reqwest = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
 anyhow = { workspace = true }
-clap = { workspace = true }
+futures-util = { workspace = true }
+tokio = { workspace = true }
 
 [lints]
 workspace = true
