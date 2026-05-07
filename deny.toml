@@ -63,8 +63,7 @@ feature-depth = 1
 # More documentation for the advisories section can be found here:
 # https://embarkstudios.github.io/cargo-deny/checks/advisories/cfg.html
 [advisories]
-# The path where the advisory databases are cloned/fetched into
-#db-path = "$CARGO_HOME/advisory-dbs"
+db-path = "$CARGO_HOME/advisory-dbs"
 # The url(s) of the advisory databases to use
 #db-urls = ["https://github.com/rustsec/advisory-db"]
 # A list of advisory IDs to ignore. Note that ignored advisories will still
@@ -75,11 +74,8 @@ ignore = [
     #"a-crate-that-is-yanked@0.1.1", # you can also ignore yanked crate versions if you wish
     #{ crate = "a-crate-that-is-yanked@0.1.1", reason = "you can specify why you are ignoring the yanked crate" },
 ]
-# If this is true, then cargo deny will use the git executable to fetch advisory database.
-# If this is false, then it uses a built-in git library.
-# Setting this to true can be helpful if you have special authentication requirements that cargo-deny does not support.
-# See Git Authentication for more information about setting up git authentication.
-#git-fetch-with-cli = true
+
+git-fetch-with-cli = false
 
 # This section is considered when running `cargo deny check licenses`
 # More documentation for the licenses section can be found here:
@@ -95,7 +91,7 @@ allow = [
     "BSD-3-Clause",
     "Zlib",
     "ISC",
-    "CDLA-Permissive-2.0"
+    "CDLA-Permissive-2.0",
 ]
 # The confidence threshold for detecting a license from license text.
 # The higher the value, the more closely the license text must be to the
@@ -192,12 +188,7 @@ deny = [
 #exact = true
 
 # Certain crates/versions that will be skipped when doing duplicate detection.
-skip = [
-    "hashbrown@0.16.1",
-    "core-foundation@0.9.4"
-    #"ansi_term@0.11.0",
-    #{ crate = "ansi_term@0.11.0", reason = "you can specify a reason why it can't be updated/removed" },
-]
+skip = ["hashbrown@0.16.1", "windows-sys@0.52.0"]
 # Similarly to `skip` allows you to skip certain crates during duplicate
 # detection. Unlike skip, it also includes the entire tree of transitive
 # dependencies starting at the specified crate, up to a certain depth, which is

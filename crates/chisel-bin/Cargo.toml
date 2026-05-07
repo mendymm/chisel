@@ -4,13 +4,19 @@ version.workspace = true
 edition.workspace = true
 license.workspace = true
 
+[[bin]]
+name = "chisel"
+path = "src/main.rs"
+
 [dependencies]
+anyhow.workspace = true
 chisel-core = { path = "../chisel-core" }
 chisel-providers = { path = "../chisel-providers" }
 chisel-tui = { path = "../chisel-tui" }
-tokio = { workspace = true }
-anyhow = { workspace = true }
-clap = { workspace = true }
+clap.workspace = true
+reqwest.workspace = true
+rustls.workspace = true
+tokio.workspace = true
 
 [lints]
 workspace = true
