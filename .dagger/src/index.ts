@@ -13,7 +13,6 @@ export class Chisel {
   }
 
   /**
-  /**
    * run a rustfmt check
    */
   @func()
@@ -83,6 +82,7 @@ export class Chisel {
   ): Promise<string> {
     return this.cargoCheckContainer(rootDir).stdout();
   }
+
   /**
    * run cargo clippy
    */
