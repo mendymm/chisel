@@ -12,14 +12,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Restore Dagger cache
-        uses: actions/cache@v4
-        with:
-          path: /var/lib/dagger
-          key: dagger-${{ runner.os }}-${{ hashFiles('**/Cargo.lock') }}
-          restore-keys: |
-            dagger-${{ runner.os }}-
-
       - name: Run checks
         uses: dagger/dagger-for-github@27b130bf0f79a7f6fbbbe0fbca6760dc9bb40a77 # v8.4.1
         with:
