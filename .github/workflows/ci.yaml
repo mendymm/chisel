@@ -5,12 +5,14 @@ on:
     branches: [main]
   pull_request:
 
+permissions: {}
+
 jobs:
   checks:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
           persist-credentials: false
 
@@ -18,4 +20,4 @@ jobs:
         uses: dagger/dagger-for-github@27b130bf0f79a7f6fbbbe0fbca6760dc9bb40a77 # v8.4.1
         with:
           version: "latest"
-          verb: check
+          verb: "check"
