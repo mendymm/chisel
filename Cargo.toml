@@ -66,9 +66,9 @@ lossy_float_literal = "warn"
 cast_sign_loss = "warn"
 invalid_upcast_comparisons = "warn"
 # Optional - these effectively force you to document numeric invariants
-# cast_possible_wrap = "warn"
-# cast_precision_loss = "warn"
-# cast_possible_truncation = "warn"
+cast_possible_wrap = "warn"
+cast_precision_loss = "warn"
+cast_possible_truncation = "warn"
 
 # Don't Do Bad Things That are Easy to Avoid
 rc_mutex = "warn"
